@@ -1,0 +1,138 @@
+/* =========================================
+   Header & Navigation (Top Right)
+   ========================================= */
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box; /* MODIFICA: Impedisce al padding di far uscire lo Studio dallo schermo */
+  padding: 2.5rem 3.5rem;
+  z-index: 10;
+  display: flex;
+  justify-content: flex-end;
+}
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap; /* MODIFICA: Sicurezza per schermi più piccoli */
+  gap: 3rem;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: var(--font-sans), sans-serif;
+  font-weight: 300;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+  color: #ffffff;
+}
+
+/* =========================================
+Contacts & Google Calendar Section
+========================================= */
+.contacts {
+  position: relative; /* Necessario per allineare l'header assoluto */
+  background-color: #1a1710; /* Sfondo scuro elegante per staccare dal verde dell'hero */
+  padding: 10rem 2rem 8rem; /* Aumentato il padding superiore per non sovrapporsi ai link */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.contacts__container {
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+}
+
+.contacts__header {
+  margin-bottom: 3.5rem;
+}
+
+.contacts__eyebrow {
+  font-family: var(--font-sans);
+  font-weight: 200;
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--clr-accent); /* Colore oro */
+  margin-bottom: 1.2rem;
+}
+
+.contacts__title {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.2;
+  color: #ffffff;
+}
+
+.contacts__divider {
+  width: 40px;
+  height: 1px;
+  background: var(--clr-accent);
+  margin: 2rem auto 0;
+}
+
+.contacts__description {
+  font-family: var(--font-sans);
+  font-weight: 200;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 600px;
+  margin: 0 auto 3rem;
+}
+
+/* Pulsante di prenotazione */
+.calendar-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1.2rem 2.5rem;
+  border: 1px solid var(--clr-accent);
+  background: transparent;
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.calendar-btn:hover {
+  background-color: var(--clr-accent);
+  color: #1a1710;
+  box-shadow: 0 8px 32px rgba(201, 169, 110, 0.15);
+  cursor: pointer;
+}
+
+.calendar-btn svg {
+  transition: transform 0.4s ease;
+}
+
+.calendar-btn:hover svg {
+  transform: scale(1.1);
+}
+
+/* Stile opzionale per l'Iframe integrato */
+.calendar-embed {
+  margin-top: 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(10px);
+}

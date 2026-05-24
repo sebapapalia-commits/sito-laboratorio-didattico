@@ -1,0 +1,291 @@
+/* =========================================
+   CSS Variables
+   ========================================= */
+:root {
+  --clr-bg:        #f5f2ec;
+  --clr-ink:       #1a1710;
+  --clr-ink-soft:  #5a5548;
+  --clr-accent:    #c9a96e;
+  --clr-line:      rgba(255,255,255,0.3);
+
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-sans:    'Jost', sans-serif;
+}
+
+/* =========================================
+   Reset & Base
+   ========================================= */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #2c3e2d;
+  color: var(--clr-ink);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* =========================================
+   Header & Nav
+   ========================================= */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 1.4rem 3rem;
+  display: flex;
+  justify-content: flex-end;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, transparent 100%);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2.5rem;
+}
+
+nav ul li a {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+nav ul li a:hover {
+  color: var(--clr-accent);
+}
+
+/* =========================================
+   Hero — Nuova Immagine di Sfondo
+   ========================================= */
+main {
+  flex: 1;
+}
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 7rem 2rem 4rem;
+  overflow: hidden;
+
+  
+  background-image: url("Image_sito_informatica_2.png");
+
+ 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Overlay Scuro + Sfocatura (Blur) per la massima leggibilità dei testi */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  backdrop-filter: blur(4px); /* Sfuma delicatamente l'immagine per far risaltare le scritte */
+  -webkit-backdrop-filter: blur(4px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  animation: fade-up 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero__eyebrow {
+  font-family: var(--font-sans);
+  font-weight: 200;
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--clr-accent);
+  margin-bottom: 1.6rem;
+}
+
+.hero__title {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(3.5rem, 10vw, 9rem);
+  line-height: 1.05;
+  color: #ffffff;
+  text-shadow: 0 2px 30px rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 0.1em;
+}
+
+.hero__title .line--italic {
+  font-style: italic;
+  font-size: 0.55em;
+  color: var(--clr-accent);
+  line-height: 0.8;
+}
+
+.hero__divider {
+  width: 40px;
+  height: 1px;
+  background: var(--clr-accent);
+  margin: 2.5rem auto 0;
+}
+
+/* =========================================
+   Authors
+   ========================================= */
+.authors {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 3.5rem;
+  margin-top: 4.5rem;
+  animation: fade-up 1.4s 0.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.authors__sep {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.4);
+  user-select: none;
+}
+
+.authors__card {
+  text-align: center;
+  padding: 1.4rem 2rem;
+  border: 1px solid rgba(255,255,255,0.25);
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  min-width: 160px;
+}
+
+.authors__card:hover {
+  border-color: var(--clr-accent);
+  box-shadow: 0 8px 32px rgba(201, 169, 110, 0.2);
+}
+
+.authors__label {
+  display: block;
+  font-family: var(--font-sans);
+  font-weight: 200;
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 0.6rem;
+}
+
+.authors__name {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 300;
+  line-height: 1.2;
+  color: #ffffff;
+}
+
+.authors__name strong {
+  font-weight: 400;
+  display: block;
+  font-size: 1.65rem;
+}
+
+/* =========================================
+   Scroll hint
+   ========================================= */
+.hero__scroll-hint {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-sans);
+  font-weight: 200;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  z-index: 3;
+  animation: bob 2.5s ease-in-out infinite;
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(6px); }
+}
+
+/* =========================================
+   Footer
+   ========================================= */
+footer {
+  padding: 1.5rem 3rem;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  background: #111a0a;
+}
+
+footer p {
+  font-family: var(--font-sans);
+  font-weight: 200;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: rgba(255,255,255,0.4);
+}
+
+/* =========================================
+   Animations
+   ========================================= */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   Responsive
+   ========================================= */
+@media (max-width: 600px) {
+  header { padding: 1.2rem 1.5rem; }
+  nav ul { gap: 1.5rem; }
+
+  .authors {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .authors__sep { display: none; }
+}
