@@ -16,20 +16,22 @@
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="#">Portfolio</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
         <li><a href="contatti.html">Contatti</a></li>
         <li><a href="about_studio.html" class="active">Studio</a></li>
         <li><a href="noemi.html">Noemi Novali</a></li>
         <li><a href="sebastiano.html">Sebastiano Papalia</a></li>
-
-        
+        <li>
+          <label style="cursor: pointer; padding-left: 10px;">
+            <input type="checkbox" id="lang-toggle" onchange="switchLanguage()"> EN
+          </label>
+        </li>
       </ul>
     </nav>
   </header>
 
   <main>
 
-    <!-- HERO ABOUT -->
     <section class="about-hero">
       <div class="about-hero__overlay"></div>
       <div class="about-hero__content">
@@ -39,7 +41,6 @@
       </div>
     </section>
 
-    <!-- STORIA -->
     <section class="story">
       <div class="story__grid">
         <div class="story__label">
@@ -66,9 +67,8 @@
       </div>
     </section>
 
-    <!-- TIMELINE -->
     <section class="timeline">
-      <div class="timeline__inner">
+      <div class="timeline__inner" id="timeline-box">
         <div class="timeline__item">
           <span class="timeline__year">2013</span>
           <div class="timeline__body">
@@ -115,7 +115,6 @@
       </div>
     </section>
 
-    <!-- VALORI -->
     <section class="values">
       <div class="values__header">
         <p class="eyebrow">La nostra filosofia</p>
@@ -143,7 +142,6 @@
       </div>
     </section>
 
-    <!-- FONDATORI CTA -->
     <section class="founders">
       <p class="eyebrow">Le persone dietro lo studio</p>
       <h2>I Fondatori</h2>
@@ -172,6 +170,8 @@
   <footer>
     <p>&copy; 2025 Noemi Novali &amp; Sebastiano Papalia — Your Living · Your Life</p>
   </footer>
+
+  <script src="translate.js"></script>
 
 </body>
 </html>

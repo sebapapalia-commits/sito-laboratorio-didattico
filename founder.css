@@ -75,24 +75,14 @@ body.page-founder nav ul li a.active {
   padding: 8rem 2rem 4rem;
 }
 
+/* MODIFICATO: Sostituiti i vecchi gradienti colorati con l'immagine sky_line_1.png e una sfumatura di dissolvenza */
 .founder-hero__bg {
   position: absolute;
   inset: 0;
   z-index: 0;
-}
-
-/* Noemi — toni caldi dorati */
-.page-noemi .founder-hero__bg {
-  background:
-    radial-gradient(ellipse 70% 70% at 70% 50%, rgba(201,169,110,0.18) 0%, transparent 60%),
-    linear-gradient(135deg, #1a1208 0%, #2a1e10 50%, #0e0e0e 100%);
-}
-
-/* Sebastiano — toni freddi verdi/blu */
-.page-sebastiano .founder-hero__bg {
-  background:
-    radial-gradient(ellipse 70% 70% at 30% 50%, rgba(80,140,110,0.18) 0%, transparent 60%),
-    linear-gradient(135deg, #0a1210 0%, #101e18 50%, #0e0e0e 100%);
+  background: 
+    linear-gradient(to bottom, rgba(14, 14, 14, 0.2) 0%, rgba(14, 14, 14, 0.9) 100%),
+    url('sky_line_1.png') center/cover no-repeat;
 }
 
 .founder-hero__content {
@@ -252,7 +242,7 @@ body.page-founder nav ul li a.active {
    CTA sezione
    ========================================= */
 .founder-cta {
-  background: #0e0e0e;
+  background: #d5c598;
   padding: 6rem 2rem;
   text-align: center;
 }

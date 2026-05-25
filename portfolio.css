@@ -1,0 +1,212 @@
+/* =========================================
+   portfolio.css - Stili specifici per la pagina Portfolio
+   ========================================= */
+
+/* AGGIUNTO: Definizione delle variabili per rendere il CSS autonomo */
+:root {
+  --clr-bg: #faf9f6;          /* Sfondo chiaro/off-white elegante */
+  --clr-ink: #1c1c1c;         /* Testo scuro principale */
+  --clr-ink-soft: #555555;    /* Testo secondario */
+  --clr-accent: #8e7d67;      /* Colore accento per dettagli (es. bronzo/oro spento) */
+  --font-display: 'Cormorant Garamond', serif;
+  --font-sans: 'Jost', sans-serif;
+}
+
+/* =========================================
+   Header & Nav (Nuova sezione per l'allineamento in alto a destra)
+   ========================================= */
+/* =========================================
+   Header & Nav (Nuova sezione per l'allineamento in alto a destra)
+   ========================================= */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box; /* FISSA IL PROBLEMA: include il padding nella larghezza totale */
+  z-index: 100;
+  padding: 1.4rem 3rem;
+  display: flex;
+  justify-content: flex-end; /* Spinge i link tutto a destra */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2.5rem; /* Spazio tra un link e l'altro */
+}
+
+nav ul li a {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--clr-ink); /* Colore scuro per contrasto sullo sfondo chiaro */
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+
+
+nav ul li a:hover {
+  color: var(--clr-accent); /* Diventa color bronzo al passaggio del mouse */
+}
+
+/* =========================================
+   Elementi della pagina Portfolio (Invariati)
+   ========================================= */
+.portfolio-page {
+  background-color: var(--clr-bg); 
+  padding-top: 8rem; 
+}
+
+.portfolio-intro {
+  text-align: center;
+  padding: 4rem 2rem 2rem;
+}
+
+.portfolio-intro__subtitle {
+  font-family: var(--font-sans);
+  font-weight: 200;
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--clr-ink-soft);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-intro__title {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: 3.5rem;
+  color: var(--clr-ink);
+}
+
+.portfolio-intro__divider {
+  width: 50px;
+  height: 1px;
+  background: var(--clr-accent);
+  margin: 1.5rem auto 0;
+}
+
+.portfolio-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem 8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8rem; 
+}
+
+.project-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+.project-item--reverse {
+  flex-direction: row-reverse;
+}
+
+.project-item__content {
+  flex: 1;
+  max-width: 450px;
+}
+
+.project-item__category {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--clr-accent);
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+.project-item__title {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: 2.2rem;
+  line-height: 1.2;
+  color: var(--clr-ink);
+  margin-bottom: 1.5rem;
+}
+
+.project-item__description {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--clr-ink-soft);
+  margin-bottom: 1.5rem;
+}
+
+.project-item__meta {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: 0.75rem;
+  color: var(--clr-ink-soft);
+  opacity: 0.7;
+}
+
+.project-item__image-wrapper {
+  flex: 1;
+  max-width: 550px; 
+  aspect-ratio: 4 / 3; 
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08); 
+  background-color: #e0dbd1; 
+}
+
+.project-item__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-item__image-wrapper:hover .project-item__img {
+  transform: scale(1.04);
+}
+
+/* =========================================
+   Responsive (Aggiornato solo per includere l'header)
+   ========================================= */
+@media (max-width: 900px) {
+  header { 
+    padding: 1.2rem 1.5rem; /* Riduce il padding del menu su schermi piccoli */
+  }
+  
+  nav ul { 
+    gap: 1.5rem; /* Avvicina i link sui dispositivi mobili */
+  }
+
+  .project-item, 
+  .project-item--reverse {
+    flex-direction: column-reverse; 
+    gap: 2rem;
+  }
+
+  .project-item__content {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .project-item__image-wrapper {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .portfolio-container {
+    gap: 5rem;
+    padding-bottom: 4rem;
+  }
+  
+  .portfolio-intro__title {
+    font-size: 2.8rem;
+  }
+}

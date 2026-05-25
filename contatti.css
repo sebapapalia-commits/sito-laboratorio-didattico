@@ -42,7 +42,7 @@ Contacts & Google Calendar Section
 ========================================= */
 .contacts {
   position: relative; /* Necessario per allineare l'header assoluto */
-  background-color: #1a1710; /* Sfondo scuro elegante per staccare dal verde dell'hero */
+  background-color: #d5c598; /* Sfondo scuro elegante per staccare dal verde dell'hero */
   padding: 10rem 2rem 8rem; /* Aumentato il padding superiore per non sovrapporsi ai link */
   display: flex;
   justify-content: center;
